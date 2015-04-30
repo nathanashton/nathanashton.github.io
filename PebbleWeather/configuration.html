@@ -21,30 +21,31 @@
 
       <div data-role='content'>
 
-        <div data-role="fieldcontain">
-          <label for="gps_switch">Use GPS</label>
-          <select name="gps_switch" id="gps_switch" data-theme="c" data-role="slider" data-track-theme="d">
-            <option value="false">No</option>
-            <option value="true">Yes</option>
-          </select>
-        </div>
-
-        <div data-role="fieldcontain">
-          <label for="location">Location</label>
-          <input type="text" name="location" id="location" value="" />
-        </div>
 
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup" data-type="horizontal">
-            <legend>Units:</legend>
+            <legend>Temp Units:</legend>
 
             <label for="celsius">Celsius</label>
-            <input type="radio" id="celsius" name="units" value="celsius" data-theme="c">
+            <input type="radio" id="celsius" name="tempunits" value="celsius" data-theme="c">
 
             <label for="fahrenheit">Fahrenheit</label>
-            <input type="radio" id="fahrenheit" name="units" value="fahrenheit" data-theme="c">
+            <input type="radio" id="fahrenheit" name="tempunits" value="fahrenheit" data-theme="c">
           </fieldset>
         </div>
+
+      <div data-role="fieldcontain">
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Rain Units:</legend>
+
+            <label for="mm">mm</label>
+            <input type="radio" id="mm" name="rainunits" value="mm" data-theme="c">
+
+            <label for="inches">Inches</label>
+            <input type="radio" id="inches" name="rainunits" value="inches" data-theme="c">
+          </fieldset>
+        </div>
+
 
         <div data-role="fieldcontain">
           <label for="invert_color">Invert Colors</label>
@@ -77,9 +78,8 @@
 
       function saveOptions() {
         var options = {
-          'use_gps': $('#gps_switch').val(),
-          'location': $('#location').val(),
-          'units': $('input:radio[name=units]:checked').val(),
+          'tempunits': $('input:radio[name=tempunits]:checked').val(),
+          'rainunits': $('input:radio[name=rainunits]:checked').val(),          
           'invert_color': $('#invert_color').val()
         }
         return options;
@@ -95,18 +95,20 @@
 
         $('#gps_switch').val(getQueryVariable('use_gps')).change();
         $('#location').val(getQueryVariable('location'));
-        if (getQueryVariable('units') == "celsius") {
-          $('input:radio[name=units][value=celsius]').prop('checked', true).trigger("click");
+        if (getQueryVariable('tempunits') == "celsius") {
+          $('input:radio[name=tempunits][value=celsius]').prop('checked', true).trigger("click");
         } else {
-          $('input:radio[name=units][value=fahrenheit]').prop('checked', true).trigger("click");
+          $('input:radio[name=tempunits][value=fahrenheit]').prop('checked', true).trigger("click");
+        }
+                if (getQueryVariable('rainunits') == "mm") {
+          $('input:radio[name=rainunits][value=mm]').prop('checked', true).trigger("click");
+        } else {
+          $('input:radio[name=rainunits][value=inches]').prop('checked', true).trigger("click");
         }
         $('#invert_color').val(getQueryVariable('invert_color')).change();
 
         // Disable location field based on GPS toggle
-        $('#location').prop('disabled', $('#gps_switch').val() == "true");
-        $('#gps_switch').change(function() {
-          $('#location').prop('disabled', $('#gps_switch').val() == "true");
-        });
+
       });
     </script>
   </body>
