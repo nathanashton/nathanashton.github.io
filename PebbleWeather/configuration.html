@@ -93,8 +93,7 @@
           document.location = 'pebblejs://close#' + encodeURIComponent(JSON.stringify(saveOptions()));
         });
 
-        $('#gps_switch').val(getQueryVariable('use_gps')).change();
-        $('#location').val(getQueryVariable('location'));
+
         if (getQueryVariable('tempunits') == "celsius") {
           $('input:radio[name=tempunits][value=celsius]').prop('checked', true).trigger("click");
         } else {
