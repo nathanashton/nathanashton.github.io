@@ -3,7 +3,7 @@
     "sources": {
           "PaddocksWoo": {
             "type": "geojson",
-            "data": "http://localhost:8080/PaddocksWoo.geojson"
+            "data": "https://github.com/nathanashton/nathanashton.github.io/blob/master/PaddocksWoo.geojson"
           }
     },
     "layers": [
