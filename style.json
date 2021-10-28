@@ -4,7 +4,7 @@
     "sources": {
           "PaddocksWoo": {
             "type": "geojson",
-            "data": "https://nathanashton.github.io/style.json"
+            "data": "https://nathanashton.github.io/PaddocksWoo.geojson"
           }},
     "layers": [
         {
