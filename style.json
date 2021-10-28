@@ -1,6 +1,11 @@
 {
     "version": 8,
     "name": "PaddocksWoo-style",
+    "sources": {
+          "PaddocksWoo": {
+            "type": "geojson",
+            "data": "http://localhost:8080/PaddocksWoo.geojson"
+          },
     "layers": [
         {
             "id": "paddocks-a",
