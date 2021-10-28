@@ -1,0 +1,26 @@
+{
+    "name": "PaddocksWoo-style",
+    "sources": {
+          "PaddocksWoo": {
+            "type": "geojson",
+            "data": "http://localhost:8080/PaddocksWoo.geojson"
+          }
+    },
+    "layers": [
+        {
+            "id": "paddocks-a",
+            "type": "fill",
+            "source": "PaddocksWoo",
+            "layout": {},
+            "paint": {
+                "fill-color": [
+                    "match",
+                    ["get", "SS"],
+                    ["a"],
+                    "hsl(0, 100%, 55%)",
+                    "#000000"
+                ]
+            }
+        }
+    ]
+}
