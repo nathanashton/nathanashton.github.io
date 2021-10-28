@@ -1,12 +1,6 @@
 {
     "version": 8,
     "name": "PaddocksWoo-style",
-    "sources": {
-          "PaddocksWoo": {
-            "type": "geojson",
-            "data": "https://nathanashton.github.io/PaddocksWoo.geojson"
-          }
-    },
     "layers": [
         {
             "id": "paddocks-a",
