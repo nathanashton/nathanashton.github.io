@@ -4,7 +4,7 @@
   "sources": {
     "Paddocks":{
       "type":"geojson",
-      "data":"http://localhost:8080/Paddocks-style.geojson"
+      "data":"https://nathanashton.github.io/PaddocksWoo.geojson"
     }
   },
   "layers":[
