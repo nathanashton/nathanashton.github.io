@@ -1,0 +1,34 @@
+{
+  "version":8,
+  "name":"Paddocks-style",
+  "sources": {
+    "Paddocks":{
+      "type":"geojson",
+      "data":"http://localhost:8080/Paddocks-style.geojson"
+    }
+  },
+  "layers":[
+    {
+      "id":"paddocks-fill",
+      "type":"fill",
+      "source":"Paddocks",
+      "layout":{},
+      "paint":{
+        "fill-color":[
+          "match",
+          [
+            "get",
+            "PADDOCK"
+          ],
+          "Bottle Tree", "#0000ff",
+          "Box", "#00ff00",
+          "Mill", "#ff0000",
+          "Pockets", "#ff00ff",
+          "Ripley", "#ffff00",
+          "Lagoon", "#00ffff",
+          "#0ffff0"
+        ]
+      }
+    }
+  ]
+}
