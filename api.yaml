@@ -445,7 +445,7 @@ components:
       type: oauth2
       description: Provides OAuth token valid for short duration ~75 seconds
       # vendor-extension x-client-id and x-client-secret to prefill data
-      x-client-id: 3e458221-c98d-43c9-af74-7b92123320f9
+      x-client-id:
       x-client-secret:
       flows:
         authorizationCode:
